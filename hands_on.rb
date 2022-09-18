@@ -1,6 +1,5 @@
 require 'yaml'
 require 'aws-sdk-dynamodb'
-require "time"
 
 # Call
 def run!
@@ -14,30 +13,21 @@ def run!
   dynamodb_table_name = credential_hash['table_name']
 
   # 各自入力 #######################
-  start_ts = '2022-09-18'
-  end_ts = '2022-09-20 23:59:59'
+
   #################################
 
-  query_hash = {
-    table_name: dynamodb_table_name,
-    expression_attribute_values: {
-      ':key' => your_name,
-      ':start_unixtime' => Time.parse(start_ts).to_i,
-      ':end_unixtime' => Time.parse(end_ts).to_i,
-    }, 
-    key_condition_expression: 'customer_name = :key AND unixtime BETWEEN :start_unixtime AND :end_unixtime', 
-    # projection_expression: 'product_category, price'                # `SELECT product_category, price FROM ~` をしたい場合
+  update_hash = {
+    table_name: dynamodb_table_name, 
+    
   }
-  dynamodb_query(query_hash)
+  dynamodb_query(update_hash)
 
   puts 'Done!👍'
 end
 
 # 返り値に含まれているBigDecimal型の数字を一括でintに変更
-def convert_bigdecimal(array)
-  array.each{ |hash|
-    hash.each{ |k, v| hash[k] = v.to_i if v.is_a?(BigDecimal) }
-  }
+def convert_bigdecimal(hash)
+  hash.each{ |k, v| hash[k] = v.to_i if v.is_a?(BigDecimal) }
 end
 
 # DynamoDBから条件に合うすべてのデータを取得する

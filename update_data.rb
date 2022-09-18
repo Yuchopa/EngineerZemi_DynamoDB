@@ -16,14 +16,20 @@ def run!
   unixtime = 
   #################################
 
-  get_hash = {
-    table_name: dynamodb_table_name,
+  update_hash = {
+    table_name: dynamodb_table_name, 
+    expression_attribute_values: {
+      ":price" => 18000, 
+      ":product_category" => 'えんぴつ 10ダース', 
+    }, 
     key: {
-      customer_name: your_name,
-      unixtime: unixtime
-    }
+      'customer_name' => your_name,
+      'unixtime' => unixtime
+    }, 
+    update_expression: "SET price = :price, product_category = :product_category",
+    return_values: 'UPDATED_NEW'
   }
-  dynamodb_get_item(get_hash)
+  dynamodb_update_item(update_hash)
 
   puts 'Done!👍'
 end
@@ -33,13 +39,12 @@ def convert_bigdecimal(hash)
   hash.each{ |k, v| hash[k] = v.to_i if v.is_a?(BigDecimal) }
 end
 
-# DynamoDBから1件データを取得する
-def dynamodb_get_item(table_item)
-  result = @dynamodb_client.get_item(table_item)
-  puts "#-GET ITEM-# #{table_item}"
+# DynamoDBにある条件に合うデータを更新する
+def dynamodb_update_item(table_item)
+  result = @dynamodb_client.update_item(table_item)
+  puts "#-UPDATE ITEM-# #{table_item}"
   puts '-----'
-  puts result[:item]
-  puts convert_bigdecimal(result[:item])
+  puts convert_bigdecimal(result[:attributes])
   puts '-----'
 rescue StandardError => e
   puts "Error! #{e}"

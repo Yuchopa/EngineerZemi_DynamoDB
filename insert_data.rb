@@ -37,7 +37,7 @@ end
 # DynamoDBに1件レコードを追加する
 def dynamodb_put_item(hash_item)
   @dynamodb_client.put_item(hash_item)
-rescue e
+rescue StandardError => e
   puts "Error! #{e}"
 end
 
