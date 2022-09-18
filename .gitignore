@@ -1,2 +1,2 @@
 vendor/*
-credential/*
+credential/key.yml
