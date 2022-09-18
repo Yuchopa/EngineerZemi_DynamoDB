@@ -7,7 +7,7 @@
 cd EngineerZemi_DynamoDB
 bundle install --path vendor/bundle
 
-# ① insert_item
+# ① put_item
 ruby insert_data.rb
 
 # ② get_item
