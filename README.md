@@ -6,4 +6,16 @@
 ```shell
 cd EngineerZemi_DynamoDB
 bundle install --path vendor/bundle
+
+# ① insert_item
+ruby insert_data.rb
+
+# ② get_item
+ruby get_data.rb
+
+# ③ query
+ruby query_data.rb
+
+# ④ update_item
+ruby update_data.rb
 ```
