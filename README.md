@@ -44,6 +44,7 @@ bundle exec ruby insert_data.rb
 **try!**  
 customer_nameとunixtimeは上と同様で、「消しゴム / 150円」を追加してください。
 
+<br/>
 
 ### ・get_item
 先程のput_itemで入れたデータを取得してください。
@@ -53,6 +54,8 @@ unixtimeをマネジメントコンソールからコピーし、プログラム
 # 実行コマンド
 bundle exec ruby get_data.rb
 ```
+
+<br/>
 
 ### ・update_item
 先程のput_itemで入れた「えんぴつ」のデータを更新します。
@@ -67,6 +70,8 @@ bundle exec ruby update_item.rb
 update_itemは **PKとSKの組み合わせがあれば** そのデータを更新しますが、
 ない場合は新たにデータを作成するupsertの機能があります。
 適当なunixtimeを入力し、upsertができるか試してみてください。
+
+<br/>
 
 ### ・query
 '2022-09-18'〜'2022-09-20 23:59:59'までに登録したデータをすべて取得します。
