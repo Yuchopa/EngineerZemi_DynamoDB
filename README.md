@@ -3,6 +3,15 @@
 使用の際は、当日配布するハンズオン用アカウントの認証鍵を自分で登録する必要があります。
 
 
+# 事前準備
+```shell
+# ① git cloneかzipでダウンロードする
+git clone https://github.com/Yuchopa/EngineerZemi_DynamoDB.git
+# ② bundle install をする
+cd EngineerZemi_DynamoDB
+bundle install --path vendor/bundle
+```
+
 ## ハンズオン① マネジメントコンソール編
 ![image](https://user-images.githubusercontent.com/39322967/191152553-7530157b-9cc5-4db3-b089-c45a79737c21.png)
 
