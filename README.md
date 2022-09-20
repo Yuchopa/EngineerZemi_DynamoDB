@@ -79,8 +79,8 @@ bundle exec ruby update_item.rb
 ```
 
 **try!**  
-update_itemは **PKとSKの組み合わせがあれば** そのデータを更新しますが、
-ない場合は新たにデータを作成するupsertの機能があります。
+update_itemは **PKとSKの組み合わせがあれば** そのデータを更新しますが、  
+ない場合は新たにデータを作成するupsertの機能があります。  
 適当なunixtimeを入力し、upsertができるか試してみてください。
 
 <br/>
