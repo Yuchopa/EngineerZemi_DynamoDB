@@ -23,13 +23,11 @@ def run!
   }
   dynamodb_put_item(insert_hash)
 
-  insert_hash[:item] = {
-    customer_name: your_name,
-    unixtime: Time.now().to_i,
-    product_category: '消しゴム',
-    price: 100
-  }
-  dynamodb_put_item(insert_hash)
+  ##-- customer_nameとunixtimeは上と同様で、「消しゴム / 150円」を追加してください --##
+  # insert_hash[:item] = {
+    
+  # }
+  # dynamodb_put_item(insert_hash)
 
   puts 'Done!👍'
 end

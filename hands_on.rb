@@ -1,3 +1,14 @@
+#################### try! ####################
+
+# 公式ドキュメントを参考にしながら、下記のデータ抽出を行ってください。
+# https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/DynamoDB/Client.html#query-instance_method
+# 
+# <Question>
+# customer_name = ozawa が、8月1日〜10日の間でカートに入れた品物すべてを取得する。
+# Dynamodbのクエリで、product_categoryとpriceのみを予め指定する。
+
+##############################################
+
 require 'yaml'
 require 'aws-sdk-dynamodb'
 
@@ -9,18 +20,15 @@ def run!
     access_key_id: credential_hash['aws_access_key_id'],
     secret_access_key: credential_hash['aws_secret_access_key'],
   )
-  your_name = credential_hash['your_name']
-  dynamodb_table_name = credential_hash['table_name']
+  dynamodb_table_name = 'EngineerZemi'
 
   # 各自入力 #######################
-
-  #################################
-
-  update_hash = {
+  query_hash = {
     table_name: dynamodb_table_name, 
     
   }
-  dynamodb_query(update_hash)
+  #################################
+  dynamodb_query(query_hash)
 
   puts 'Done!👍'
 end

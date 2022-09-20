@@ -26,7 +26,6 @@ def run!
       ':end_unixtime' => Time.parse(end_ts).to_i,
     }, 
     key_condition_expression: 'customer_name = :key AND unixtime BETWEEN :start_unixtime AND :end_unixtime', 
-    # projection_expression: 'product_category, price'                # `SELECT product_category, price FROM ~` をしたい場合
   }
   dynamodb_query(query_hash)
 
