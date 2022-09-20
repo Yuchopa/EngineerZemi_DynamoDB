@@ -87,7 +87,7 @@ bundle exec ruby query_data.rb
 ※ 1661997600 = 2022-09-01 11:00:00
 
 **さらにtry!**  
-`hands_on.rb` に下記の条件を満たすプログラムを書いてください。
+`hands_on.rb` に下記の条件を満たすプログラムを書いて実行して下さい。
 ```
 <Question>
 customer_name = ozawa が、8月1日〜10日の間でカートに入れた品物すべてを取得する。
