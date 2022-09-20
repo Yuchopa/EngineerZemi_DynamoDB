@@ -40,7 +40,7 @@ bundle install --path vendor/bundle
 
 
 ### ・put_item
-コマンドを実行してください。
+コマンドを実行してください。  
 実行すると下記の要領でデータがDynamoDBに入ります。
 | カラム名 | 内容 |
 | ---- | ---- |
@@ -59,7 +59,7 @@ customer_nameとunixtimeは上と同様で、「消しゴム / 150円」を追�
 <br/>
 
 ### ・get_item
-先程のput_itemで入れたデータを取得してください。
+先程のput_itemで入れたデータを取得してください。  
 unixtimeをマネジメントコンソールからコピーし、プログラムに貼り付けてコマンドを実行してください。
 
 ```shell
@@ -70,7 +70,7 @@ bundle exec ruby get_data.rb
 <br/>
 
 ### ・update_item
-先程のput_itemで入れた「えんぴつ」のデータを更新します。
+先程のput_itemで入れた「えんぴつ」のデータを更新します。  
 unixtimeをマネジメントコンソールからコピーし、プログラムに貼り付けてコマンドを実行してください。
 
 ```shell
@@ -79,8 +79,7 @@ bundle exec ruby update_item.rb
 ```
 
 **try!**  
-update_itemは **PKとSKの組み合わせがあれば** そのデータを更新しますが、  
-ない場合は新たにデータを作成するupsertの機能があります。  
+update_itemは **PKとSKの組み合わせがあれば** そのデータを更新しますが、ない場合は新たにデータを作成するupsertの機能があります。  
 適当なunixtimeを入力し、upsertができるか試してみてください。
 
 <br/>
@@ -99,7 +98,8 @@ bundle exec ruby query_data.rb
 ※ 1661997600 = 2022-09-01 11:00:00
 
 **さらにtry!**  
-`hands_on.rb` に下記の条件を満たすプログラムを書いて実行して下さい。
+`hands_on.rb` に下記の条件を満たすプログラムを書いて実行して下さい。  
+
 ```
 <Question>
 customer_name = ozawa が、8月1日〜10日の間でカートに入れた品物すべてを取得する。
