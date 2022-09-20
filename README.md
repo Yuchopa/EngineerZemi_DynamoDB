@@ -39,11 +39,13 @@ bundle exec ruby update_data.rb
 
 ※ 1661997600 = 2022-09-01 11:00:00
 
+***
 
 ## ハンズオン② AWS SDK編
-![image](https://user-images.githubusercontent.com/39322967/191153324-c81b8547-1a95-4e0a-80a7-01370f986b0f.png)
+![image](https://user-images.githubusercontent.com/39322967/191164713-a89e7913-428f-4ce4-a054-82ecdd6fc450.png)
 
-#### ・put_item
+
+### ・put_item
 コマンドを実行してください。
 実行すると下記の要領でデータがDynamoDBに入ります。
 | カラム名 | 内容 |
@@ -61,7 +63,7 @@ bundle exec ruby insert_data.rb
 customer_nameとunixtimeは上と同様で、「消しゴム / 150円」を追加してください。
 
 
-#### ・get_item
+### ・get_item
 先程のput_itemで入れたデータを取得してください。
 unixtimeをマネジメントコンソールからコピーし、プログラムに貼り付けてコマンドを実行してください。
 
@@ -70,7 +72,7 @@ unixtimeをマネジメントコンソールからコピーし、プログラム
 bundle exec ruby get_data.rb
 ```
 
-#### ・update_item
+### ・update_item
 先程のput_itemで入れた「えんぴつ」のデータを更新します。
 unixtimeをマネジメントコンソールからコピーし、プログラムに貼り付けてコマンドを実行してください。
 
@@ -84,7 +86,7 @@ update_itemは **PKとSKの組み合わせがあれば** そのデータを更�
 ない場合は新たにデータを作成するupsertの機能があります。
 適当なunixtimeを入力し、upsertができるか試してみてください。
 
-#### ・query
+### ・query
 '2022-09-18'〜'2022-09-20 23:59:59'までに登録したデータをすべて取得します。
 下記コマンドを実行してください。
 
@@ -97,7 +99,7 @@ bundle exec ruby query_data.rb
 `ハンズオン① マネジメントコンソール編` で入れたデータを取得してください。
 ※ 1661997600 = 2022-09-01 11:00:00
 
-**さらにtry!**
+**さらにtry!**  
 `hands_on.rb` に下記の条件を満たすプログラムを書いてください。
 ```
 <Question>
